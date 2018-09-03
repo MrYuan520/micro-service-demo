@@ -1,0 +1,16 @@
+server:
+  port: 8081
+#dubbo
+spring:
+  dubbo:
+    application:
+      name: course-service
+    registry:
+      address: zookeeper://192.168.5.155:2181
+    scan: com.yb.course
+#  dubbo:
+#    application:
+#      name: course-service
+#    register: 单词拼错
+#      address: zookeeper://192.168.5.155:2181
+#    scan: com.yb.course
