@@ -4,10 +4,10 @@ server:
 
 thrift:
   user:
-    ip: 127.0.0.1
+    ip: user-service
     port: 7911
   message:
-    ip: 127.0.0.1
+    ip: message-service
     port: 9090
 
 #redis

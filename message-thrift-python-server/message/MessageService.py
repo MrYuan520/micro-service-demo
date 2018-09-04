@@ -13,7 +13,7 @@ sender = 'imoocd@163.com'
 authCode = 'aA111111'
 class MessageServiceHandler:
     def sendMobileMessage(self, mobile, message):
-        print "sendMobileMessage,moblie:" + mobile+",message:" + message
+        print ("sendMobileMessage,moblie:" + mobile+",message:" + message)
         return True
 
     def sendEmailMessage(self, email, message):
@@ -26,11 +26,10 @@ class MessageServiceHandler:
             smtplibObj = smtplib.SMTP('SMTP.163.com')
             smtplibObj.login(sender,authCode,)
             smtplibObj.sendmail(sender,[email],messageObj.as_string())
-            print "send mail success"
+            print ("send mail success")
             return True
-        except smtplib.SMTPException, ex:
-            print "send mail fail !"
-            print ex
+        except smtplib.SMTPException:
+            print ("send mail fail !")
             return False
 
 if __name__ == '__main__':
@@ -41,6 +40,6 @@ if __name__ == '__main__':
     pfactory = TBinaryProtocol.TBinaryProtocolFactory()
 
     server = TServer.TSimpleServer(processor,transport,tfactory,pfactory)
-    print "python thrift service start"
+    print ("python thrift service start")
     server.serve()
-    print "python thrift service exit"
+    print ("python thrift service exit")
