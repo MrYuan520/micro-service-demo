@@ -1,0 +1,32 @@
+version: 3
+
+services:
+  message-service:
+    image: message-service:latest
+
+  user-service:
+    image: user-service:latest
+
+  user-edge-service:
+    image: user-edge-service:latest
+    links:
+      - user-service
+      - message-service
+
+  course-dubbo-service:
+    image: course-dubbo-service:latest
+    links:
+      - user-service
+
+  course-edge-service:
+    image: course-edge-service:latest
+    links:
+      - user-edge-service
+
+  api-gatway-zuul:
+    image: api-gatway-zuul:latest
+    links:
+      - user-edge-service
+      - course-edge-service
+    ports:
+      - 80:80

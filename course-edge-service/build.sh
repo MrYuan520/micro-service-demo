@@ -2,4 +2,5 @@
 
 mvn package
 
-docker build -t course-edge-service:lastest .
+docker build -t 192.168.5.155/micro-service-demo/course-edge-service:latest .
+docker push 192.168.5.155/micro-service-demo/course-edge-service:latest

@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM 192.168.5.155/micro-service-demo/python:3.6
 MAINTAINER YUANBO
 
 RUN pip install thrift

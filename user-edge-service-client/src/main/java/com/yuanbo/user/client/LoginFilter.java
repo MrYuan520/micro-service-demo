@@ -76,7 +76,7 @@ public abstract class LoginFilter implements Filter {
             userDTO);
 
     private UserDTO requestUserInfo(String token) {
-        String url = "http://192.168.5.103/user/authentication";
+        String url = "http://user-edge-serviec/user/authentication";
         HttpClient client  = new DefaultHttpClient();
         HttpPost post = new HttpPost(url);
         List<NameValuePair> nvps = new ArrayList<NameValuePair>();
