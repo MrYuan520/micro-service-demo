@@ -4,4 +4,4 @@ MAINTAINER yuanbo
 ENV PYTHONPATH /
 COPY message /message
 
-ENTRYPOINT ["python", "/message_service.py"]
+ENTRYPOINT ["python", "/MessageService.py"]
