@@ -64,7 +64,7 @@ public abstract class LoginFilter implements Filter {
             }
         }
         if(userDTO == null){
-            response.sendRedirect("http://192.168.5.103:8082/user/login");
+            response.sendRedirect("http://user-edge-service/user/login");
             return;
         }
 
